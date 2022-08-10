@@ -4,7 +4,7 @@ I have done my portfolio with help of HTML , CSS and JAVA SCRIPT. I have added t
 
 Click the below link to see my Portfolio 
 
-          [https://portfolio-pranav.netlify.app/](https://portfolio-pranav.netlify.app/).
+          [PortFolio](https://portfolio-pranav.netlify.app/).
           
           
                                     Thank you !!!
