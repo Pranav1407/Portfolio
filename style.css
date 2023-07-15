@@ -38,10 +38,14 @@ nav
     justify-content: space-between;
     flex-wrap: wrap;
 }
+nav ul
+{
+    margin-left: 350px;
+}
 nav ul li
 {
     display: inline-block;
-    margin: 10px 20px;
+    margin: 30px 40px;
 }
 nav ul li a 
 {
