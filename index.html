@@ -35,6 +35,7 @@
                     <div class="titles">
                     <p class="links active" onclick="opentab('skills')">Skills</p>
                     <p class="links" onclick="opentab('Education')" >Education</p>
+                    <p class="links" onclick="opentab('hear')" >Hear about me</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills"><ul>
                     <li><span>Front-End</span><br>Basics of HTML , CSS and JAVA SCRIPT</li>
@@ -44,6 +45,10 @@
                     <li><span>2018</span><br>Passed out SSLC with 96%</li>
                     <li><span>2020</span><br>Passed out HSC with 81%</li>
                     </ul></div>
+                    <div class="tab-contents hear" id="hear">
+                        <div class="play"><i id="play" class="fa-solid fa-play fa-bounce" style="color: #ff004f;"></i></div>
+                        <div id="waveform"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,18 +78,6 @@
 
         </div>
     </div>
-
-    <div class="myself">
-        <div class="container">
-            <h1 class="subtitle">Hear About Myself</h1>
-            <div class="audio">
-                <audio controls>
-                    <source src="./Documents/Pookkale-Satru.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-        </div>
-    </div>
-
     <div id="contact">
         <div class="container">
             <div class="row">
@@ -140,6 +133,49 @@
         {
             sidemenu.style.right="-200px";
         }
+    </script>
+    <script type="module">
+        var play = document.getElementById('play');
+
+        import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+    
+        const wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: '#ababab',
+            progressColor: '#ff004f',
+            url: './Documents/audio.mp3',
+            width: 50,
+            barwidth:0,
+            responsive: true,
+            height:50,
+            barRadius: 2
+        })
+        play.onclick = function()
+        {
+            wavesurfer.playPause();
+            if(play.classList.contains('fa-play'))
+            {
+                play.classList.remove('fa-play');
+                play.classList.remove('fa-bounce');
+                play.classList.add('fa-pause');
+                play.style.color = "#fff";
+            }
+            else
+            {
+                play.classList.remove('fa-pause');
+                play.classList.add('fa-play');
+                play.classList.add('fa-bounce');
+                play.style.color = "#ff004f";
+            }
+        }
+
+        wavesurfer.on('finish', function(){
+            play.url = "./Documents/audio.mp3";
+            wavesurfer.stop();
+            play.classList.remove('fa-pause');
+            play.classList.add('fa-play');
+            play.classList.add('fa-bounce');
+        })
     </script>
 </body>
 </html>

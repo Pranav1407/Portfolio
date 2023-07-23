@@ -162,6 +162,16 @@ nav ul li a:hover::after
 .tab-contents.active-tab{
     display: block;
 }
+.play i
+{
+    margin-top: -10px;
+    font-size: x-large;
+}
+#waveform
+{
+    width: 50%;
+    margin-top: 30px;
+}
 #services
 {
     padding: 30px 0;
